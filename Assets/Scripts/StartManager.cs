@@ -9,25 +9,18 @@ public class StartManager : MonoBehaviour
 
     public static string _payerName;
     public InputField inputField;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    public Text errorMessage;
 
     public void StartGame()
     {
-
-        _payerName = inputField.text;
-        SceneManager.LoadScene(1);
-
-
+        if (inputField.text == "")
+        {
+            errorMessage.text = "Please enter name first";
+        }
+        else {
+            _payerName = inputField.text;
+            SceneManager.LoadScene(1);
+        }
     }
 }
