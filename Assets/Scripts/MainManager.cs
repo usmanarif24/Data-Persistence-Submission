@@ -18,10 +18,12 @@ public class MainManager : MonoBehaviour
     
     private bool m_GameOver = false;
 
+    string _playerName;
     
     // Start is called before the first frame update
     void Start()
     {
+        _playerName = StartManager._payerName;
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);
         
